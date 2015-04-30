@@ -101,13 +101,16 @@
 \item Basic rules: 
 \begin{itemize}
 \item Three or more teams of one or more players
-\item Each team is assigned to hunt players from another team, while at the same
-time it must evade from players from the other team
+\item Players on a team hunt players from another team, while at the same
+time they must evade players from a different other team
+\begin{itemize}
+    \item Ex. \textit{Team A} hunts \textit{Team B} hunts \textit{Team C} hunts \textit{Team A}
+\end{itemize}
 \item A player is killed if another player (from a team hunting him) gets close
-enough
+enough (bellow a threshold)
 \item The team which has hunted more players wins the game
 \end{itemize}
-\item The game take place in an arena with fixed dimensions in 2D
+\item The game takes place in an arena with fixed dimensions (in 2D)
 \item Each player will have a turn to decide how to move.
 \end{itemize}
 \end{frame}
@@ -120,7 +123,7 @@ enough
 \item Using ROS launch file scripts to ease the startup of complex systems
 \item Using ros parameters to configure the nodes
 \item Creating custom messages
-\item Using RVIZ - Robot Visualization - and publishing visualization markers
+\item Using RVIZ and publishing visualization markers
 \item Visualizing the ROS nodes and the topics they are exchanging
 \item Using the ROS tf library (just the basics)
 \item Using the rosbag tool to record the system's output
@@ -140,7 +143,10 @@ have time to try to solve the problems
 be completed before starting the workshop
 \begin{itemize}
 \item use the catkin (and not rosbuild) to build your packages
+\item you can skip the python tutorials
 \end{itemize}
+\item C++ tutorials at \url{http://www.cplusplus.com/doc/}, take a look if you
+have no C++ background
 \end{itemize}
 \end{frame}
 
@@ -153,14 +159,23 @@ be completed before starting the workshop
 \item Subscribe to a message (\textit{player\_move}) which will give the command to a
 player to move
 \item Broadcast a tf transform to let other players know about its position
-\item Provide a service (\textit{kill\_me}), which will let another player kill
-him, if he is close enough and belong to the hunting team
-\item Access a service (\textit{kill\_me}) from another player if he was able to
-hunt him
+\item Provide a service (\textit{kill\_me}), to be called by the hunters
+\item Access a service (\textit{add\_points\_to\_team}) provided by the referee
 \item Publish rviz markers to show his position in the arena, along with some
-\textit{nasty comments}
+\textit{nasty comments} to intimidate the adversaries
 \end{itemize}
 \end{itemize}
+\end{frame}
+
+\section{Example} 
+\begin{frame}\frametitle{Example}
+\begin{figure}[!t] \scriptsize
+\begin{center}
+\centerline{
+\includegraphics[width=.9\linewidth]{example.pdf}
+}
+\end{center}
+\end{figure}
 \end{frame}
 
 
